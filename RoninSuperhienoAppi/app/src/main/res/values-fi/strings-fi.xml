@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ronin Superhieno Appi</string>
+    <string name="hello_world">Hei maailma!</string>
+    <string name="landscape">Olen erittäin vaakataso!</string>
+    <string name="another_string">Toinen teksti.</string>
+</resources>
