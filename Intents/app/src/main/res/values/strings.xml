@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Intents</string>
+    <string name="choose">Choose your favorite toast!</string>
+    <string name="meatballs_text">Meat balls</string>
+    <string name="vegetableballs_text">Vegetable balls</string>
+    <string name="fish_text">Fish</string>
+    <string name="rock_text">Rock</string>
+    <string name="butter_text">Butter</string>
+
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+</resources>
