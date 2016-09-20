@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MenuNotificationToastDemo</string>
+    <string name="action_quit">Quit u pussay</string>
+    <string name="menu_item_1">Dis is first item</string>
+    <string name="menu_item_2">Anoder item</string>
+    <string name="notify_me">Notify me!</string>
+</resources>
