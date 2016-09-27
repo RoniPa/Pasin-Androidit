@@ -1,11 +1,16 @@
 package fi.jamk.imagefetcher;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  * Downloads images and does nice stuff
@@ -37,8 +42,18 @@ class DownloadImageTask extends AsyncTask<String,Void,Bitmap>
     }
 
     @Override
-    protected Bitmap doInBackground(String... params) {
-        return null;
+    protected Bitmap doInBackground(String... params)
+    {
+        URL imageUrl;
+        Bitmap bitmap = null;
+        try {
+            imageUrl = new URL(params[0]);
+            InputStream in = imageUrl.openStream();
+            bitmap = BitmapFactory.decodeStream(in);
+        } catch (Exception ex) {
+            Log.e("<<LOADIMAGE>>", ex.getMessage());
+        }
+        return bitmap;
     }
 
     // this is done in UI thread

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
                             mediaPlayer.prepare();
                             mediaPlayer.start();
                         } catch (IOException ex) {
-                            Log.e("Cannot play audio", ex.toString());
+                            Log.e("Cannot play audio", ex.getMessage());
                         }
                     }
                 });
