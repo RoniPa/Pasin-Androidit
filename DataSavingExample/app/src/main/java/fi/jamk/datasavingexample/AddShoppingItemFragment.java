@@ -93,9 +93,10 @@ public class AddShoppingItemFragment extends DialogFragment
         if (mListener != null) {
             String[] itemData = new String[]{
                     ((EditText)view.findViewById(R.id.editText5)).getText().toString(),
-                    ((EditText)view.findViewById(R.id.editText6)).getText().toString()};
-            System.out.println(itemData[0]+itemData[1]);
+                    ((EditText)view.findViewById(R.id.editText6)).getText().toString(),
+                    ((EditText)view.findViewById(R.id.editText7)).getText().toString()};
             mListener.saveShoppingItem(itemData);
+            getFragmentManager().popBackStack();
         }
     }
 
