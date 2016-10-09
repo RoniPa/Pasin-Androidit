@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
@@ -19,8 +21,11 @@ import android.view.ViewGroup;
  * Use the {@link AddShoppingItemFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddShoppingItemFragment extends DialogFragment {
+public class AddShoppingItemFragment extends DialogFragment
+    implements View.OnClickListener
+{
     private OnAddShoppingItemListener mListener;
+    private View view;
 
     public AddShoppingItemFragment() {}
 
@@ -48,15 +53,11 @@ public class AddShoppingItemFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_shopping_item, container, false);
-    }
+        view = inflater.inflate(R.layout.fragment_add_shopping_item, container, false);
+        Button btn = (Button) view.findViewById(R.id.button);
+        btn.setOnClickListener(this);
 
-    public void onButtonPressed(AddShoppingItemFragment i) {
-        if (mListener != null) {
-            String[] itemData = new String[] {"This should be", "data"};
-            mListener.saveShoppingItem(itemData);
-        }
+        return view;
     }
 
     @Override
@@ -85,6 +86,17 @@ public class AddShoppingItemFragment extends DialogFragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (mListener != null) {
+            String[] itemData = new String[]{
+                    ((EditText)view.findViewById(R.id.editText5)).getText().toString(),
+                    ((EditText)view.findViewById(R.id.editText6)).getText().toString()};
+            System.out.println(itemData[0]+itemData[1]);
+            mListener.saveShoppingItem(itemData);
+        }
     }
 
     /**
