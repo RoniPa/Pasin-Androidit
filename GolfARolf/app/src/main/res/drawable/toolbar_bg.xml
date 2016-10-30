@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:drawable="@color/colorPrimary"/>
+    <item>
+        <bitmap
+            android:gravity="center|bottom|fill_vertical|clip_horizontal"
+            android:src="@drawable/toolbar_bg_image" />
+    </item>
+
+</layer-list>
