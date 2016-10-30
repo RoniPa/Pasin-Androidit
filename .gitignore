@@ -1,3 +1,6 @@
+# Config xml (API keys, etc.)
+config.xml
+
 # Built application files
 *.apk
 *.ap_
